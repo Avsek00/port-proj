@@ -1,0 +1,282 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.8;
+}
+
+/* Add Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    box-sizing: border-box; /* Ensures padding/margin don't push it out of screen */
+    transition: background-color 0.3s ease;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* Space between links */
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347; /* Hover color effect */
+}
+
+/* Mobile Menu Button (Burger Menu) */
+.burger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Make Navbar Sticky */
+.navbar.scrolled {
+    background-color: rgba(51, 51, 51, 0.95); /* Slight transparency for elegance */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Elegant shadow effect */
+}
+
+/* Responsive for Smaller Screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the links for mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position the menu right below the navbar */
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the links when active */
+    }
+
+    .burger {
+        display: flex; /* Show the burger menu on mobile */
+    }
+}
+
+/* Home Section Styles */
+.home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('background.jpg') no-repeat center center/cover;
+}
+
+.intro {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 2rem; /* Space between text and photo */
+}
+
+.intro-text h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.intro-text h1 span {
+    color: #ff6347;
+}
+
+.intro-text .btn {
+    margin-top: 1rem;
+    padding: 0.7rem 2rem;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.intro-text .btn:hover {
+    background-color: #ff7b60;
+}
+
+/* Profile Photo Styles */
+.intro-photo {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Work Experience Section */
+.work {
+    padding: 4rem 2rem;
+    background-color: #f7f9fc;
+    text-align: center;
+}
+
+.work-card {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Skills Section */
+.skills {
+    padding: 4rem 2rem;
+    background-color: #f7f9fc;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .home .intro {
+        padding: 1rem;
+    }
+
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-photo {
+        width: 180px;
+        height: 180px;
+    }
+}
