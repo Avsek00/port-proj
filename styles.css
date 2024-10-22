@@ -205,17 +205,58 @@ p {
 }
 
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow wrapping if there are multiple projects */
 }
 
 .project-card {
-    background-color: white;
-    padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
     border-radius: 10px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* Specific Backgrounds for Each Project */
+.project1 {
+    background-image: url('/images/1.png'); /* Replace with actual image */
+}
+
+.project2 {
+    background-image: url('/path/to/project2-image.jpg');
+}
+
+.project3 {
+    background-image: url('/path/to/project3-image.jpg');
+}
+
+/* Optional: Responsive Styling */
+@media (max-width: 768px) {
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%; /* Make project cards full width on smaller screens */
+        height: 250px; /* Adjust height for better viewing */
+    }
+}
+
 
 /* Skills Section */
 .skills {
