@@ -11,7 +11,7 @@
             text-align: center;
         }
         .container {
-            width: 80%;
+            width: 90%; /* Adjust to 90% for better responsiveness */
             margin: 0 auto;
         }
         .video-container {
@@ -26,7 +26,7 @@
         }
         .collage {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Larger images */
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* More flexible for smaller screens */
             gap: 15px; /* Increase spacing between images */
         }
         .collage img {
@@ -50,6 +50,22 @@
         .github-button:hover {
             background-color: #555;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .video-container iframe {
+                height: 250px; /* Adjust video height on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container iframe {
+                height: 200px; /* Further adjust video height for very small screens */
+            }
+            .collage {
+                grid-template-columns: 1fr; /* Make collage single column on small screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,7 +79,7 @@
         <!-- YouTube Video Section -->
         <div class="video-container">
             <h2>Project Overview Video</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/A0eoSG82h5w?si=MVn419LHX2MKwZiz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/A0eoSG82h5w?si=MVn419LHX2MKwZiz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <!-- Collage Section -->
