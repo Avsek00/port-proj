@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business QR with Wi-Fi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add styles for the banner */
+        .banner {
+            background-color: red; /* Background color for the banner */
+            color: white; /* Text color */
+            text-align: center; /* Center the text */
+            padding: 10px; /* Padding around the text */
+            font-weight: bold; /* Make text bold */
+            margin-bottom: 20px; /* Space below the banner */
+        }
+    </style>
+</head>
+<body>
+    <!-- Banner for the note -->
+    <div class="banner">
+        Note: Wallets & banking apps are currently not accepting incorporated QR codes like this.
+    </div>
+
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="center">
+        <i class="fa fa-qrcode" style="font-size: 300px; color: #999;"></i>
+        <div class="square"></div>
+    </div>
+
+    <!-- New section for QR code upload with SSID and password -->
+    <div class="upload-section">
+        <h2>Upload Your Business QR Code</h2>
+        <form id="wifiForm" action="process.php" method="POST" enctype="multipart/form-data" onsubmit="return submitForm(event)">
+            <label for="ssid">Enter Wi-Fi SSID:</label>
+            <input type="text" id="ssid" name="ssid" required placeholder="Wi-Fi Network Name" />
+        
+            <label for="password">Enter Wi-Fi Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Wi-Fi Password" />
+        
+            <label for="qrUpload">Upload Your Business-QR Code:</label>
+            <input type="file" id="qrUpload" name="qrUpload" accept="image/*" />
+            <button type="button" id="removeQrButton">X</button>
+        
+            <button type="submit">Generate QR</button>
+        </form>
+        
+        <!-- Section to display the generated QR code -->
+        <div id="qrDisplay" style="display: none; margin-top: 20px;">
+            <h3>Your Generated QR Code:</h3>
+            <img id="qrCodeImage" src="" alt="Generated QR Code" />
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>A project created by Avishek Laudary</p>
+            <p>
+                This project empowers businesses in Nepal to provide temporary Wi-Fi access, specifically designed to facilitate online payments. As online payment methods are rapidly gaining popularity in the country, this initiative aims to alleviate the hassles associated with Wi-Fi and data connectivity. 
+                By offering short-term Wi-Fi access, businesses can enhance customer convenience, allowing seamless transactions without the need for customers to rely on their mobile data. 
+                This innovative solution not only promotes cashless payments but also helps businesses attract more customers by creating a smoother, hassle-free shopping experience.
+            </p>
+            <p>
+                Email: <a href="mailto:avisheklaudari@gmail.com">avisheklaudari@gmail.com</a> | 
+                <a href="https://www.avisheklaudary.com.np/" target="_blank">www.avisheklaudary.com.np</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+
+</body>
+</html>
