@@ -156,6 +156,10 @@ i {
     cursor: pointer;
 }
 
+.realtime{
+    padding: 10px;
+  color: aqua;  
+}
 
 .upload-section input[type="file"] {
     margin: 10px 0;
